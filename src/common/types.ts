@@ -1,6 +1,5 @@
 import { GOGCloudSavesLocation, GogInstallPlatform } from './types/gog'
 import { LegendaryInstallPlatform } from './types/legendary'
-import { VersionInfo } from 'heroic-wine-downloader'
 import { IpcRendererEvent } from 'electron'
 import { ChildProcess } from 'child_process'
 
@@ -439,19 +438,12 @@ export type RefreshOptions = {
   runInBackground?: boolean
 }
 
-export interface WineVersionInfo extends VersionInfo {
-  isInstalled: boolean
-  hasUpdate: boolean
-  installDir: string
-}
-
-export type GamepadActionStatus = Record<
-  ValidGamepadAction,
-  {
+export interface GamepadActionStatus {
+  [key: string]: {
     triggeredAt: { [key: number]: number }
     repeatDelay: false | number
   }
->
+}
 
 export type ValidGamepadAction = GamepadActionArgs['action']
 

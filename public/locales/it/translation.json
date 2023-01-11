@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Sto cercando di determinare la cartella di salvataggi corretta"
         },
-        "settings": "Le impostazioni sono salvate automaticamente",
-        "version": "Versione di Wine"
+        "settings": "Le impostazioni sono salvate automaticamente"
     },
     "infobox": {
         "help": "Aiuto",
@@ -600,6 +599,18 @@
     "stores": "Negozi",
     "title": {
         "allGames": "Tutti i giochi"
+    },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
     },
     "toolbox": {
         "settings": {

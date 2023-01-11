@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "設定は自動的に保存されます",
-        "version": "Wine Version"
+        "settings": "設定は自動的に保存されます"
     },
     "infobox": {
         "help": "ヘルプ",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "All Games"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Select the default prefix folder for new configs",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Wine Manager",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine Manager",
-            "unzipping": "Unzipping"
-        },
-        "release": "Release Date",
-        "size": "Size"
+        "actions": "Action"
     }
 }

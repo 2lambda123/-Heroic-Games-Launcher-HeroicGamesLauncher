@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "設定會自動保存",
-        "version": "Wine 版本"
+        "settings": "設定會自動保存"
     },
     "infobox": {
         "help": "幫助",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "所有遊戲"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "為新配置選擇預設 Prefix 資料夾",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Wine 管理員",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine 管理員",
-            "unzipping": "解壓縮"
-        },
-        "release": "Release Date",
-        "size": "大小"
+        "actions": "Action"
     }
 }

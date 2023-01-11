@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Preferencias gardadas automaticamente",
-        "version": "Wine Version"
+        "settings": "Preferencias gardadas automaticamente"
     },
     "infobox": {
         "help": "Axuda",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Todos os xogos"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Select the default prefix folder for new configs",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Wine Manager",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine Manager",
-            "unzipping": "Unzipping"
-        },
-        "release": "Release Date",
-        "size": "Size"
+        "actions": "Action"
     }
 }

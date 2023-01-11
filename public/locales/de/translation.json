@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Ermittle den Ordner für Speicherdaten"
         },
-        "settings": "Einstellungen werden automatisch gespeichert",
-        "version": "Wine-Version"
+        "settings": "Einstellungen werden automatisch gespeichert"
     },
     "infobox": {
         "help": "Hilfe",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Alle Spiele"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Wähle den Standard-Präfix-Ordner für neue Konfigurationen",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Aktion",
-        "manager": {
-            "link": "Wine-Manager",
-            "not-found": "Keine Wine Versionen gefunden. Drücken sie die Aktualisierungstaste und versuchen sie es erneut.",
-            "title": "Wine-Manager",
-            "unzipping": "Entpacke"
-        },
-        "release": "Veröffentlicht",
-        "size": "Größe"
+        "actions": "Aktion"
     }
 }

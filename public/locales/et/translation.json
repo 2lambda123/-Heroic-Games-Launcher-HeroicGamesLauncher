@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Seaded salvestatakse automaatselt",
-        "version": "Wine'i versioon"
+        "settings": "Seaded salvestatakse automaatselt"
     },
     "infobox": {
         "help": "Abi",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Kõik mängud"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Valige vaikimisi prefiksi kaust uute konfiguratsioonide jaoks",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Wine'i haldur",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine'i haldur",
-            "unzipping": "Lahtipakkimine"
-        },
-        "release": "Release Date",
-        "size": "Suurus"
+        "actions": "Action"
     }
 }

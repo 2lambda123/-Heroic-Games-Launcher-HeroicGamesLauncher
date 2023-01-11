@@ -253,10 +253,10 @@ export default function SidebarLinks() {
             <div className="Sidebar__itemIcon">
               <FontAwesomeIcon
                 icon={faWineGlass}
-                title={t('wine.manager.link', 'Wine Manager')}
+                title={t('tool.manager.link', 'Tool Manager')}
               />
             </div>
-            <span>{t('wine.manager.link', 'Wine Manager')}</span>
+            <span>{t('tool.manager.link', 'Tool Manager')}</span>
           </>
         </NavLink>
       )}

@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "尝试检查正确的保存文件夹"
         },
-        "settings": "设置会自动保存",
-        "version": "Wine 版本"
+        "settings": "设置会自动保存"
     },
     "infobox": {
         "help": "帮助",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "所有游戏"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "选择新配置的默认前置文件夹",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "动作",
-        "manager": {
-            "link": "Wine 管理器",
-            "not-found": "未找到 Wine 版本。请单击刷新按钮重试。",
-            "title": "Wine 管理器",
-            "unzipping": "解压缩"
-        },
-        "release": "发布日期",
-        "size": "大小"
+        "actions": "动作"
     }
 }

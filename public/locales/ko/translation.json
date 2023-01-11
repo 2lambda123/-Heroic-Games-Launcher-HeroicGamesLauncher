@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "설정은 자동으로 저장됩니다",
-        "version": "Wine Version"
+        "settings": "설정은 자동으로 저장됩니다"
     },
     "infobox": {
         "help": "도움말",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "모든 게임"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "새로운 구성을 위한 기본 접두사 폴더 선택하기",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Wine 관리자",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine 관리자",
-            "unzipping": "압축 풀기"
-        },
-        "release": "Release Date",
-        "size": "Size"
+        "actions": "Action"
     }
 }

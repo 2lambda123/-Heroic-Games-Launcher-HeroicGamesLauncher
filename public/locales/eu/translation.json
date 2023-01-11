@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Ezarpenak automatikoki gordetzen dira",
-        "version": "Ardoaren Bertsioa"
+        "settings": "Ezarpenak automatikoki gordetzen dira"
     },
     "infobox": {
         "help": "Laguntza",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Joko guztiak"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Hautatu aurrizkiaren karpeta lehenetsia konfigurazio berrietarako",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Ekintza",
-        "manager": {
-            "link": "Ardo kudeatzailea",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Ardo kudeatzailea",
-            "unzipping": "Deskonprimitzea"
-        },
-        "release": "Argitaratze data",
-        "size": "Tamaina"
+        "actions": "Ekintza"
     }
 }

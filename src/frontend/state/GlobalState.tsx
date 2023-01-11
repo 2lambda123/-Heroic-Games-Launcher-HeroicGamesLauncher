@@ -9,7 +9,6 @@ import {
   InstalledInfo,
   RefreshOptions,
   Runner,
-  WineVersionInfo,
   UserInfo,
   InstallParams,
   LibraryTopSectionOptions,
@@ -39,9 +38,10 @@ import {
   gogInstalledGamesStore,
   gogLibraryStore,
   libraryStore,
-  wineDownloaderInfoStore
+  toolDownloaderInfoStore
 } from '../helpers/electronStores'
 import { sideloadLibrary } from 'frontend/helpers/electronStores'
+import { ToolVersionInfo } from 'common/types/toolmanager'
 
 const storage: Storage = window.localStorage
 const globalSettings = configStore.get('settings', {}) as AppSettings
@@ -66,7 +66,7 @@ interface StateProps {
     library: GameInfo[]
     username: string | null
   }
-  wineVersions: WineVersionInfo[]
+  toolVersions: ToolVersionInfo[]
   error: boolean
   filterText: string
   filterPlatform: string
@@ -136,8 +136,8 @@ export class GlobalState extends PureComponent<Props> {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       username: (gogConfigStore.get('userData', null) as any)?.username || null
     },
-    wineVersions: wineDownloaderInfoStore.has('wine-releases')
-      ? (wineDownloaderInfoStore.get('wine-releases', []) as WineVersionInfo[])
+    toolVersions: toolDownloaderInfoStore.has('wine-releases')
+      ? (toolDownloaderInfoStore.get('wine-releases', []) as ToolVersionInfo[])
       : [],
     error: false,
     filterText: '',
@@ -489,14 +489,14 @@ export class GlobalState extends PureComponent<Props> {
     }
   }
 
-  refreshWineVersionInfo = async (fetch: boolean): Promise<void> => {
+  refreshToolVersionInfo = async (fetch: boolean): Promise<void> => {
     if (this.state.platform !== 'linux') {
       return
     }
-    window.api.logInfo('Refreshing wine downloader releases')
+    window.api.logInfo('Refreshing tool mananger releases')
     this.setState({ refreshing: true })
     await window.api
-      .refreshWineVersionInfo(fetch)
+      .refreshToolVersionInfo(fetch)
       .then(() => {
         this.setState({
           refreshing: false
@@ -508,7 +508,7 @@ export class GlobalState extends PureComponent<Props> {
         window.api.logError('Sync with upstream releases failed')
 
         notify({
-          title: 'Wine-Manager',
+          title: 'Tool-Manager',
           body: t(
             'notify.refresh.error',
             "Couldn't fetch releases from upstream, maybe because of Github API restrictions! Try again later."
@@ -612,6 +612,7 @@ export class GlobalState extends PureComponent<Props> {
             syncCloud: true,
             showDialogModal: this.handleShowDialogModal
           })
+          return { status: 'done' }
         }
         return { status: 'error' }
       }
@@ -764,7 +765,7 @@ export class GlobalState extends PureComponent<Props> {
           isRTL,
           refresh: this.refresh,
           refreshLibrary: this.refreshLibrary,
-          refreshWineVersionInfo: this.refreshWineVersionInfo,
+          refreshToolVersionInfo: this.refreshToolVersionInfo,
           hiddenGames: {
             list: this.state.hiddenGames,
             add: this.hideGame,

@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Es busca la carpeta de partides desades correcta"
         },
-        "settings": "La configuració es desa automàticament",
-        "version": "Versió del Wine"
+        "settings": "La configuració es desa automàticament"
     },
     "infobox": {
         "help": "Ajuda",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Tots els jocs"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Selecciona el directori predefinit dels prefixos per a configuracions noves",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Acció",
-        "manager": {
-            "link": "Gestor del Wine",
-            "not-found": "No s'han trobat versions del Wine. Feu clic a la icona d'actualització per a provar-ho de nou.",
-            "title": "Gestor del Wine",
-            "unzipping": "S'està descomprimint"
-        },
-        "release": "Release Date",
-        "size": "Mida"
+        "actions": "Acció"
     }
 }

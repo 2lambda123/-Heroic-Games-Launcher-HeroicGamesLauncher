@@ -32,7 +32,7 @@ const initialContext: ContextType = {
   platform: 'unknown',
   refresh: async () => Promise.resolve(),
   refreshLibrary: async () => Promise.resolve(),
-  refreshWineVersionInfo: async () => Promise.resolve(),
+  refreshToolVersionInfo: async () => Promise.resolve(),
   refreshing: false,
   refreshingInTheBackground: true,
   isRTL: false,

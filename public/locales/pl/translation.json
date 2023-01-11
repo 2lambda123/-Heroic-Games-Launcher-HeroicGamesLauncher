@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Ustawienia są zapisywane automatycznie",
-        "version": "Wersja Wine"
+        "settings": "Ustawienia są zapisywane automatycznie"
     },
     "infobox": {
         "help": "Pomoc",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Wszystkie gry"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Wybierz domyślny folder prefiksu Wine dla nowych konfiguracji",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Akcja",
-        "manager": {
-            "link": "Menedżer Wine",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Menedżer Wine",
-            "unzipping": "Dekompresowanie"
-        },
-        "release": "Data wydania",
-        "size": "Rozmiar"
+        "actions": "Akcja"
     }
 }

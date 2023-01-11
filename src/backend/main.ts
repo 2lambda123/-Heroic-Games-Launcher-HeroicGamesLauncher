@@ -1545,7 +1545,7 @@ ipcMain.handle('isNative', (e, { appName, runner }) => {
  * INSERT OTHER IPC HANLDER HERE
  */
 import './logger/ipc_handler'
-import './wine/manager/ipc_handler'
+import './toolmanager/ipc_handler'
 import './shortcuts/ipc_handler'
 import './anticheat/ipc_handler'
 import './legendary/eos_overlay/ipc_handler'

@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Pokus o zjištění správné složky uložení"
         },
-        "settings": "Nastavení se ukládají automaticky",
-        "version": "Verze Wine"
+        "settings": "Nastavení se ukládají automaticky"
     },
     "infobox": {
         "help": "Pomoc",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Všechny hry"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Výběr výchozí složky Prefixů pro nové konfigurace",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Action",
-        "manager": {
-            "link": "Správce Wine",
-            "not-found": "Nebyly nalezeny žádné verze Wine. Klikněte na ikonu obnovení a zkuste to znovu.",
-            "title": "Správce Wine",
-            "unzipping": "Rozbalování"
-        },
-        "release": "Release Date",
-        "size": "Velikost"
+        "actions": "Action"
     }
 }

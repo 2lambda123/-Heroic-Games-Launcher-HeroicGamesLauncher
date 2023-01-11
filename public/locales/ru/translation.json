@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Попытка определить правильную папку сохранения"
         },
-        "settings": "Настройки сохраняются автоматически",
-        "version": "Версия Wine"
+        "settings": "Настройки сохраняются автоматически"
     },
     "infobox": {
         "help": "Помощь",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Все игры"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Выбрать папку префиксов по умолчанию для новых конфигураций",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Действие",
-        "manager": {
-            "link": "Менеджер Wine",
-            "not-found": "Версии Wine не найдены. Пожалуйста, нажмите на значок обновления, чтобы повторить попытку.",
-            "title": "Менеджер Wine",
-            "unzipping": "Распаковка"
-        },
-        "release": "Дата выхода",
-        "size": "Размер"
+        "actions": "Действие"
     }
 }

@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "تتم محاولة الكشف عن مجلد الحفظ الصحيح"
         },
-        "settings": "تُحفظ الإعدادات تلقائيًا",
-        "version": "إصدار واين"
+        "settings": "تُحفظ الإعدادات تلقائيًا"
     },
     "infobox": {
         "help": "مساعدة",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "جميع الألعاب"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "حدد مجلد السابقة الافتراضي للتكوينات الجديدة",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "الإجراء",
-        "manager": {
-            "link": "مدير واين",
-            "not-found": "لم يُعثر على إصدارات واين. انقر على رمز التحديث للمحاولة مرةً أخرى.",
-            "title": "مدير واين",
-            "unzipping": "جارٍ فك الضغط"
-        },
-        "release": "تاريخ الإصدار",
-        "size": "الحجم"
+        "actions": "الإجراء"
     }
 }

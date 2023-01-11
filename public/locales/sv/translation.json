@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Försöker hitta rätt mapp för sparfiler"
         },
-        "settings": "Inställningar sparas automatiskt",
-        "version": "Wine version"
+        "settings": "Inställningar sparas automatiskt"
     },
     "infobox": {
         "help": "Hjälp",
@@ -600,6 +599,18 @@
     "stores": "Butiker",
     "title": {
         "allGames": "Alla spel"
+    },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
     },
     "toolbox": {
         "settings": {

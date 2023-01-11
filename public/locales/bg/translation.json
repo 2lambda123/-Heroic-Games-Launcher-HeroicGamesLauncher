@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Настройките се запазват автоматично",
-        "version": "Версия на Wine"
+        "settings": "Настройките се запазват автоматично"
     },
     "infobox": {
         "help": "Помощ",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Всички игри"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Изберете папката на префикса по подразбиране за нови конфигурации",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Действие",
-        "manager": {
-            "link": "Управление на Wine",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Управление на Wine",
-            "unzipping": "Разархивиране"
-        },
-        "release": "Дата на изданието",
-        "size": "Размер"
+        "actions": "Действие"
     }
 }

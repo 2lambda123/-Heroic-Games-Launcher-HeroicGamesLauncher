@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Parametrlər avtomatik olaraq saxlanılır",
-        "version": "Şərab versiyası"
+        "settings": "Parametrlər avtomatik olaraq saxlanılır"
     },
     "infobox": {
         "help": "Kömək edin",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Bütün Oyunlar"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Yeni konfiqurasiyalar üçün standart prefiks qovluğunu seçin",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Fəaliyyət",
-        "manager": {
-            "link": "Şərab meneceri",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Şərab meneceri",
-            "unzipping": "Açma"
-        },
-        "release": "Buraxılış tarixi",
-        "size": "Ölçü"
+        "actions": "Fəaliyyət"
     }
 }

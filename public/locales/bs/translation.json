@@ -276,8 +276,7 @@
         "save-sync": {
             "searching": "Trying to detect the correct save folder"
         },
-        "settings": "Postavke se automatski spremaju",
-        "version": "Verzija Wine-a"
+        "settings": "Postavke se automatski spremaju"
     },
     "infobox": {
         "help": "Pomoć",
@@ -601,6 +600,18 @@
     "title": {
         "allGames": "Sve igre"
     },
+    "tool": {
+        "actions": "Action",
+        "manager": {
+            "link": "Tool Manager",
+            "no-found": "No Wine versions found. Please click the refresh icon to try again.",
+            "title": "Tool Manager",
+            "unzipping": "Unzipping"
+        },
+        "release": "Release Date",
+        "size": "Size",
+        "version": "Version"
+    },
     "toolbox": {
         "settings": {
             "default-wineprefix": "Odaberite zadanu mapu prefiksa za nove konfiguracije",
@@ -638,14 +649,6 @@
         }
     },
     "wine": {
-        "actions": "Akcija",
-        "manager": {
-            "link": "Wine menadžer",
-            "not-found": "No Wine versions found. Please click the refresh icon to try again.",
-            "title": "Wine menadžer",
-            "unzipping": "Raspakivanje"
-        },
-        "release": "Datum izlaska",
-        "size": "Veličina"
+        "actions": "Akcija"
     }
 }
