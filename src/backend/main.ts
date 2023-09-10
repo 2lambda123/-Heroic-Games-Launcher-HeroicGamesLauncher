@@ -72,7 +72,8 @@ import {
   checkWineBeforeLaunch,
   removeFolder,
   downloadDefaultWine,
-  getNileVersion
+  getNileVersion,
+  shutdownWine
 } from './utils'
 import {
   configStore,
@@ -1083,13 +1084,17 @@ ipcMain.handle(
 
     await addRecentGame(game)
 
-    if (autoSyncSaves && isOnline()) {
-      sendFrontendMessage('gameStatusUpdate', {
-        appName,
-        runner,
-        status: 'done'
-      })
+    sendFrontendMessage('gameStatusUpdate', {
+      appName,
+      runner,
+      status: 'done'
+    })
 
+    if (!isNative) {
+      await shutdownWine(gameSettings)
+    }
+
+    if (autoSyncSaves && isOnline()) {
       sendFrontendMessage('gameStatusUpdate', {
         appName,
         runner,
@@ -1112,12 +1117,6 @@ ipcMain.handle(
         )
       }
     }
-
-    sendFrontendMessage('gameStatusUpdate', {
-      appName,
-      runner,
-      status: 'done'
-    })
 
     // Exit if we've been launched without UI
     if (isCLINoGui) {
