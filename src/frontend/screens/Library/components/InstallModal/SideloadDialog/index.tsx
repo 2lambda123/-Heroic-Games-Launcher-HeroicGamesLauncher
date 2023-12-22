@@ -23,6 +23,7 @@ import fallbackImage from 'frontend/assets/heroic_card.jpg'
 import ContextProvider from 'frontend/state/ContextProvider'
 import classNames from 'classnames'
 import axios from 'axios'
+import SideloadHelp from 'frontend/components/HelpComponents/SideloadHelp'
 
 type Props = {
   availablePlatforms: AvailablePlatforms
@@ -289,6 +290,7 @@ export default function SideloadDialog({
   return (
     <>
       <DialogContent>
+        <SideloadHelp />
         <div className="sideloadGrid">
           <div className="imageIcons">
             <CachedImage
@@ -377,6 +379,7 @@ export default function SideloadDialog({
       <DialogFooter>
         {shouldShowRunExe && (
           <button
+            id="run-installer-btn"
             onClick={async () => handleRunExe()}
             className={`button is-secondary`}
             disabled={runningSetup || !title.length}
@@ -387,6 +390,7 @@ export default function SideloadDialog({
           </button>
         )}
         <button
+          id="setup-finish-btn"
           onClick={async () => handleInstall()}
           className={`button is-success`}
           disabled={(!selectedExe.length && !gameUrl) || addingApp || searching}

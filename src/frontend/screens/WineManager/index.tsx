@@ -13,6 +13,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 import { WineVersionInfo, Type, WineManagerUISettings } from 'common/types'
+import { hasHelp } from 'frontend/hooks/hasHelp'
+import WineManagerHelp from 'frontend/components/HelpComponents/WineManagerHelp'
 
 const WineItem = lazy(
   async () => import('frontend/screens/WineManager/components/WineItem')
@@ -24,6 +26,13 @@ const configStore = new TypeCheckedStoreFrontend('wineManagerConfigStore', {
 
 export default function WineManager(): JSX.Element | null {
   const { t } = useTranslation()
+
+  hasHelp(
+    'wineManager',
+    t('help.title.wineManager', 'Wine Manager'),
+    <WineManagerHelp />
+  )
+
   const { refreshWineVersionInfo, refreshing, platform } =
     useContext(ContextProvider)
   const isLinux = platform === 'linux'
@@ -125,6 +134,7 @@ export default function WineManager(): JSX.Element | null {
             })}
           </Tabs>
           <button
+            id="refreshLibraryBtn"
             className={'FormControl__button'}
             title={t('generic.library.refresh', 'Refresh Library')}
             onClick={async () => refreshWineVersionInfo(true)}

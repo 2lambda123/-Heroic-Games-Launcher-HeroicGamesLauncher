@@ -1,5 +1,6 @@
 @import '~@fontsource/rubik/index.css';
 @import '~@fontsource/cabin/index.css';
+@import '~intro.js/introjs.css';
 /*
   Subset of font https://github.com/googlefonts/noto-emoji
   which includes only flags emoji generated using command:
@@ -61,6 +62,21 @@ body {
 
 .App .offline-message {
   grid-area: offline;
+}
+
+.HelpButton {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#root:has(dialog:popover-open) {
+  pointer-events: none;
+
+  .HelpButton,
+  :popover-open {
+    pointer-events: all;
+  }
 }
 
 .danger {
@@ -151,4 +167,37 @@ img.loaded {
 
 .isRTL {
   direction: rtl;
+}
+
+.onboarding {
+  color: var(--text-default);
+  background-color: var(--background);
+}
+
+.onboarding .introjs-button {
+  background-color: var(--primary);
+  border: none;
+  color: var(--text-tertiary);
+  text-shadow: none;
+}
+
+.onboarding .introjs-tooltipbuttons {
+  border: none;
+}
+
+.onboarding .introjs-dontShowAgain label {
+  color: var(--text-default);
+  background-color: var(--background);
+}
+
+.introjs-hint-pulse {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary, var(--brand-secondary)) 50%,
+    transparent
+  );
+}
+
+.introjs-hint:hover > .introjs-hint-pulse {
+  background-color: var(--secondary, var(--brand-secondary));
 }

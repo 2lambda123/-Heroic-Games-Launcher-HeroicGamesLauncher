@@ -14,6 +14,8 @@ import { FlagPosition } from '../../components/UI/LanguageSelector'
 import SIDLogin from './components/SIDLogin'
 import ContextProvider from '../../state/ContextProvider'
 import { useAwaited } from '../../hooks/useAwaited'
+import { hasHelp } from 'frontend/hooks/hasHelp'
+import LoginHelp from 'frontend/components/HelpComponents/LoginHelp'
 
 export const epicLoginPath = '/loginweb/legendary'
 export const gogLoginPath = '/loginweb/gog'
@@ -22,6 +24,9 @@ export const amazonLoginPath = '/loginweb/nile'
 export default React.memo(function NewLogin() {
   const { epic, gog, amazon, refreshLibrary } = useContext(ContextProvider)
   const { t } = useTranslation()
+
+  hasHelp('login', t('help.title.login', 'Login'), <LoginHelp />)
+
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true)
   const [showSidLogin, setShowSidLogin] = useState(false)
