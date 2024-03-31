@@ -4,11 +4,10 @@ import {
   InstallPlatform,
   WineCommandArgs,
   ConnectivityStatus,
-  AppSettings,
-  GameSettings,
-  RunWineCommandArgs
+  RunWineCommandArgs,
+  SaveSyncArgs
 } from 'common/types'
-import { GOGCloudSavesLocation } from 'common/types/gog'
+import type { KeyValuePair } from '../schemas'
 
 export const notify = (args: { title: string; body: string }) =>
   ipcRenderer.send('notify', args)
@@ -29,11 +28,6 @@ export const readConfig = async (file: 'library' | 'user') =>
 
 export const isLoggedIn = async () => ipcRenderer.invoke('isLoggedIn')
 
-export const writeConfig = async (data: {
-  appName: string
-  config: Partial<AppSettings>
-}) => ipcRenderer.invoke('writeConfig', data)
-
 export const kill = async (appName: string, runner: Runner) =>
   ipcRenderer.invoke('kill', appName, runner)
 
@@ -44,17 +38,13 @@ export const getUserInfo = async () => ipcRenderer.invoke('getUserInfo')
 export const getAmazonUserInfo = async () =>
   ipcRenderer.invoke('getAmazonUserInfo')
 
-export const syncSaves = async (args: {
-  arg: string | undefined
-  path: string
-  appName: string
-  runner: Runner
-}) => ipcRenderer.invoke('syncSaves', args)
+export const syncSaves = async (args: SaveSyncArgs) =>
+  ipcRenderer.invoke('syncSaves', args)
 
 export const getDefaultSavePath = async (
   appName: string,
   runner: Runner,
-  alreadyDefinedGogSaves: GOGCloudSavesLocation[] = []
+  alreadyDefinedGogSaves: KeyValuePair[] = []
 ) =>
   ipcRenderer.invoke(
     'getDefaultSavePath',
@@ -85,12 +75,6 @@ export const setCyberpunModConfig = async (props: {
   modsToLoad: string[]
 }) => ipcRenderer.invoke('setCyberpunkModConfig', props)
 
-export const getGameSettings = async (
-  appName: string,
-  runner: Runner
-): Promise<GameSettings | null> =>
-  ipcRenderer.invoke('getGameSettings', appName, runner)
-
 export const getInstallInfo = async (
   appName: string,
   runner: Runner,
@@ -107,8 +91,11 @@ export const getInstallInfo = async (
     branch
   )
 
-export const runWineCommand = async (args: WineCommandArgs) =>
-  ipcRenderer.invoke('runWineCommand', args)
+export const runWineCommand = async (
+  appName: string,
+  runner: Runner,
+  args: Omit<WineCommandArgs, 'gameConfig'>
+) => ipcRenderer.invoke('runWineCommand', appName, runner, args)
 
 export const runWineCommandForGame = async (args: RunWineCommandArgs) =>
   ipcRenderer.invoke('runWineCommandForGame', args)

@@ -12,7 +12,6 @@ import {
   InstallPlatform,
   UserInfo,
   WineInstallation,
-  AppSettings,
   ToolArgs,
   LaunchParams,
   InstallParams,
@@ -34,13 +33,14 @@ import {
   InstallInfo
 } from 'common/types'
 import { SelectiveDownload } from 'common/types/legendary'
-import { GOGCloudSavesLocation } from 'common/types/gog'
 import {
   NileLoginData,
   NileRegisterData,
   NileUserData
 } from 'common/types/nile'
 import type { SystemInformation } from 'backend/utils/systeminfo'
+import type { GameConfig, GlobalConfig } from 'backend/config/schemas'
+import type { KeyValuePair, PositiveInteger } from 'backend/schemas'
 
 /**
  * Some notes here:
@@ -95,7 +95,6 @@ interface SyncIPCFunctions {
   'connectivity-changed': (newStatus: ConnectivityStatus) => void
   'set-connectivity-online': () => void
   changeTrayColor: () => void
-  setSetting: (args: { appName: string; key: string; value: unknown }) => void
   resumeCurrentDownload: () => void
   pauseCurrentDownload: () => void
   cancelDownload: (removeDownloaded: boolean) => void
@@ -115,6 +114,7 @@ interface SyncIPCFunctions {
     runner: Runner,
     status: boolean
   ) => void
+  copySettingsToClipboard: (appName: string, runner: Runner) => void
 }
 
 // ts-prune-ignore-next
@@ -124,7 +124,9 @@ interface AsyncIPCFunctions {
   checkDiskSpace: (folder: string) => Promise<DiskSpaceData>
   callTool: (args: Tools) => Promise<void>
   runWineCommand: (
-    args: WineCommandArgs
+    appName: string,
+    runner: Runner,
+    args: Omit<WineCommandArgs, 'gameConfig'>
   ) => Promise<{ stdout: string; stderr: string }>
   winetricksInstalled: ({
     runner: Runner,
@@ -137,7 +139,7 @@ interface AsyncIPCFunctions {
   checkGameUpdates: () => Promise<string[]>
   getEpicGamesStatus: () => Promise<boolean>
   updateAll: () => Promise<({ status: 'done' | 'error' | 'abort' } | null)[]>
-  getMaxCpus: () => number
+  getMaxCpus: () => PositiveInteger
   getHeroicVersion: () => string
   getLegendaryVersion: () => Promise<string>
   getGogdlVersion: () => Promise<string>
@@ -181,11 +183,9 @@ interface AsyncIPCFunctions {
   }>
   logoutLegendary: () => Promise<void>
   logoutAmazon: () => Promise<void>
-  getAlternativeWine: () => Promise<WineInstallation[]>
+  getAlternativeWine: () => WineInstallation[]
   getLocalPeloadPath: () => Promise<string>
   readConfig: (config_class: 'library' | 'user') => Promise<GameInfo[] | string>
-  requestSettings: (appName: string) => Promise<AppSettings | GameSettings>
-  writeConfig: (args: { appName: string; config: Partial<AppSettings> }) => void
   refreshLibrary: (library?: Runner | 'all') => Promise<void>
   launch: (args: LaunchParams) => StatusPromise
   openDialog: (args: OpenDialogOptions) => Promise<string | false>
@@ -204,11 +204,6 @@ interface AsyncIPCFunctions {
   updateGame: (appName: string, runner: Runner) => StatusPromise
   changeInstallPath: (args: MoveGameArgs) => Promise<void>
   egsSync: (arg: string) => Promise<string>
-  syncGOGSaves: (
-    gogSaves: GOGCloudSavesLocation[],
-    appname: string,
-    arg: string
-  ) => Promise<string>
   syncSaves: (args: SaveSyncArgs) => Promise<string>
   gamepadAction: (args: GamepadActionArgs) => Promise<void>
   getFonts: (reload: boolean) => Promise<string[]>
@@ -269,8 +264,8 @@ interface AsyncIPCFunctions {
   getDefaultSavePath: (
     appName: string,
     runner: Runner,
-    alreadyDefinedGogSaves: GOGCloudSavesLocation[]
-  ) => Promise<string | GOGCloudSavesLocation[]>
+    alreadyDefinedGogSaves: KeyValuePair[]
+  ) => Promise<KeyValuePair[]>
   isGameAvailable: (args: {
     appName: string
     runner: Runner
@@ -297,6 +292,30 @@ interface AsyncIPCFunctions {
     enabled: boolean
     modsToLoad: string[]
   }) => Promise<void>
+
+  getGlobalConfig: () => GlobalConfig
+  setGlobalConfig: <Key extends keyof GlobalConfig>(
+    key: Key,
+    value: GlobalConfig[Key]
+  ) => void
+  resetGlobalConfigKey: (key: keyof GlobalConfig) => void
+  getUserConfiguredGlobalConfigKeys: () => Record<keyof GlobalConfig, boolean>
+  getGameConfig: (appName: string, runner: Runner) => GameConfig
+  setGameConfig: <Key extends keyof GameConfig>(
+    appName: string,
+    runner: Runner,
+    key: Key,
+    value: GameConfig[Key]
+  ) => void
+  resetGameConfigKey: (
+    appName: string,
+    runner: Runner,
+    key: keyof GameConfig
+  ) => void
+  getUserConfiguredGameConfigKeys: (
+    appName: string,
+    runner: Runner
+  ) => Record<keyof GameConfig, boolean>
 }
 
 // This is quite ugly & throws a lot of errors in a regular .ts file
