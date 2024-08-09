@@ -3,11 +3,16 @@ import { useTranslation } from 'react-i18next'
 import useSetting from 'frontend/hooks/useSetting'
 import { ToggleSwitch } from 'frontend/components/UI'
 import ContextProvider from 'frontend/state/ContextProvider'
+import type { ExperimentalFeatures } from 'common/types'
 
-const ExperimentalFeatures = () => {
+export default function ExperimentalFeatures() {
   const { platform } = useContext(ContextProvider)
 
-  const FEATURES = ['enableNewDesign', 'enableHelp', 'cometSupport']
+  const FEATURES: (keyof ExperimentalFeatures)[] = [
+    'enableNewDesign',
+    'enableHelp',
+    'cometSupport'
+  ]
 
   if (platform !== 'win32') {
     FEATURES.push('automaticWinetricksFixes')
@@ -30,7 +35,7 @@ const ExperimentalFeatures = () => {
   )
   const { handleExperimentalFeatures } = useContext(ContextProvider)
 
-  const toggleFeature = (feature: string) => {
+  const toggleFeature = (feature: keyof ExperimentalFeatures) => {
     const newFeatures = {
       ...experimentalFeatures,
       [feature]: !experimentalFeatures[feature]
@@ -68,5 +73,3 @@ const ExperimentalFeatures = () => {
     </>
   )
 }
-
-export default ExperimentalFeatures

@@ -53,7 +53,9 @@ export const initTrayIcon = async (mainWindow: BrowserWindow) => {
   return appIcon
 }
 
-const iconSizesByPlatform = {
+const iconSizesByPlatform: Partial<
+  Record<NodeJS.Platform, Electron.ResizeOptions>
+> = {
   darwin: {
     width: 20,
     height: 20
@@ -73,9 +75,9 @@ const getIcon = (platform = process.platform) => {
   const settings = GlobalConfig.get().getSettings()
   const { darkTrayIcon } = settings
 
-  return nativeImage
-    .createFromPath(darkTrayIcon ? iconDark : iconLight)
-    .resize(iconSizesByPlatform[platform])
+  const size = iconSizesByPlatform[platform]
+  const image = nativeImage.createFromPath(darkTrayIcon ? iconDark : iconLight)
+  return size ? image.resize(size) : image
 }
 
 // generate the context menu

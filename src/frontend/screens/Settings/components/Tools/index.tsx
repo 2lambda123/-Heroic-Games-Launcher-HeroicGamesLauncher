@@ -23,15 +23,16 @@ export default function Tools() {
     return <></>
   }
 
-  type Tool = 'winecfg' | string
-  async function callTools(tool: Tool, exe?: string) {
-    const toolStates = {
-      winecfg: setWinecfgRunning,
-      runExe: setRunExeRunning
-    }
+  async function callTools(tool: string, exe?: string) {
+    const toolStateSetter =
+      tool === 'winecfg'
+        ? setWinecfgRunning
+        : tool === 'runExe'
+        ? setRunExeRunning
+        : undefined
 
-    if (tool in toolStates) {
-      toolStates[tool](true)
+    if (toolStateSetter) {
+      toolStateSetter(true)
     }
 
     await window.api.callTool({
@@ -41,8 +42,8 @@ export default function Tools() {
       runner
     })
 
-    if (tool in toolStates) {
-      toolStates[tool](false)
+    if (toolStateSetter) {
+      toolStateSetter(false)
     }
   }
 

@@ -446,8 +446,7 @@ export async function refresh(): Promise<ExecResult> {
     const settled = await Promise.allSettled(chunk)
     const fulfilled = settled
       .filter((promise) => promise.status === 'fulfilled')
-      //@ts-expect-error Typescript is confused about this filter statement, it's correct however
-      .map((promise: PromiseFulfilledResult<GameInfo>) => promise.value)
+      .map((promise) => promise.value)
 
     fulfilled.forEach((data: GameInfo) => {
       if (data?.app_name) {

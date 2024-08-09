@@ -215,16 +215,11 @@ const execOptions = {
   shell: getShell()
 }
 
-const defaultFolders = [gamesConfigPath, heroicIconFolder, imagesCachePath]
-
-const necessaryFoldersByPlatform = {
-  win32: [...defaultFolders],
-  linux: [...defaultFolders, toolsPath],
-  darwin: [...defaultFolders, toolsPath]
-}
+const necessaryFolders = [gamesConfigPath, heroicIconFolder, imagesCachePath]
+if (process.platform !== 'win32') necessaryFolders.push(toolsPath)
 
 export function createNecessaryFolders() {
-  necessaryFoldersByPlatform[process.platform].forEach((folder: string) => {
+  necessaryFolders.forEach((folder: string) => {
     if (!existsSync(folder)) {
       mkdirSync(folder)
     }

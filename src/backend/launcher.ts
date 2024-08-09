@@ -992,7 +992,7 @@ interface RunnerProps {
   dir: string
 }
 
-const commandsRunning = {}
+const commandsRunning: Record<string, Promise<ExecResult>> = {}
 
 let shouldUsePowerShell: boolean | null = null
 
