@@ -631,7 +631,8 @@
                 },
                 "error": {
                     "title": "Uppladdning misslyckades"
-                }
+                },
+                "header": "Ladda upp loggfil?"
             },
             "descriptiveNames": {
                 "game-log": "Spellogg för {{gameTitle}}",
