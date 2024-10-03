@@ -751,5 +751,8 @@
     "category-settings": {
         "cancel": "בטל",
         "warning": "אזהרה"
+    },
+    "window": {
+        "close": "לסגור"
     }
 }
