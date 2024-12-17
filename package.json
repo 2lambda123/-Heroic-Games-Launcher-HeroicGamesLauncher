@@ -129,7 +129,7 @@
     "@types/tmp": "0.2.3",
     "@vitejs/plugin-react-swc": "3.6.0",
     "cross-env": "7.0.3",
-    "electron": "31.7.2",
+    "electron": "31.7.3",
     "electron-builder": "24.13.3",
     "electron-vite": "^2.0.0",
     "eslint": "9.7.0",
